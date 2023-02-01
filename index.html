@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Interactive Card Details</title>
+</head>
+<body>
+    <div class="main">
+        <div class="section1">
+            <div class="background-img">
+                
+                <div class="cards">
+                    <div class="card1">
+                        <div class="front-card">
+                            <img src="./images/bg-card-front.png" alt="">
+                            <div class="card-info">
+                                <div class="card-logo">
+                                    <img src="./images/card-logo.svg" alt=""> 
+                                </div>
+                                <div class="card-number-div">
+                                    <p class="card-number">0000 0000 0000 0000</p>
+                                </div>
+                                
+                                <div class="name-date">
+                                    <p class="name-holder">JANE APPLESEED</p>
+                                    <p class="date">
+                                        <span id="date-month">00</span>/<span id="date-year">00</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="back-card">
+                            <img  src="./images/bg-card-back.png" alt="">
+                            <div class="cvc">
+                                <p class="card-cvc">000</p>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="section2" >
+            <form id="card-details" action="">
+                <div class="cardholder-name" >
+                    <label for="cardholder-name">CARDHOLDER NAME</label>
+                    <input 
+                    class="cardholder-name-input"
+                    type="text" 
+                    name="cardholder-name"
+                    placeholder="e.g. Jane Appleseed"
+                    oninput = "showName()">
+                    <div id="name-error"></div>
+                </div>
+                <div class="card-number-input">
+                    <label for="card-number-input">CARD NUMBER</label>
+                    <input 
+                    class="cardholder-number-input"
+                    type="text" 
+                    name="card-number-input"
+                    placeholder="e.g. 1234 5678 9123 0000"
+                    maxlength="19">
+                    <div id="card-number-error"></div>
+                </div>
+                <div class="input-footer">
+                    <div class="exp-date">
+                        <label for="month-input year-input">EXP. DATE (MM/YY)</label>
+                        <div class="date-input">
+                            <input 
+                            class="month-input" 
+                            type="text" 
+                            name="month-input"
+                            placeholder="MM"
+                            oninput="showMonth()">
+                            <input 
+                            class="year-input" 
+                            type="text" 
+                            name="year-input"
+                            placeholder="YY"
+                            oninput="showYear()"
+                            required>
+                        </div>
+                        
+                    </div>
+                    <div class="cvc-input" >
+                        <label for="cvc-input">CVC</label>
+                        <input 
+                        class="cvc-number-input"
+                        type="text" 
+                        name="cvc-input"
+                        placeholder="e.g. 123"
+                        oninput="showCvc()"
+                        maxlength="3">
+                        
+                    </div>
+                </div>
+                <div class="input-footer-errors">
+                    <div id="date-error"></div>
+                    <div id="cvc-error"></div>
+                </div>
+                <button class="submit" type="submit" onclick="submitCard()">Confirm</button>
+                <div id="submit-error"></div>
+            </form>
+        </div>
+        <div class="section3" >
+            <div class="icon"></div>
+            <h1>THANK YOU!</h1>
+            <p>We've added your card details</p>
+            <button class="submit" type="submit">Continue</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
